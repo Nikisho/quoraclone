@@ -15,7 +15,6 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 function Header() {
     const [user] = useAuthState(auth);
     const provider = new GoogleAuthProvider();
-    let button;
     const signIn = (e) => {
         e.preventDefault();
         signInWithPopup(auth, provider);
@@ -40,6 +39,7 @@ function Header() {
                    width={88}
                    height={25}
                    layout='fixed'
+                   className='cursor-pointer hover:opacity-50'
             />
             <div className='flex ml-4 
                     justify-center flex-grow
@@ -57,6 +57,8 @@ function Header() {
             <div className='hidden lg:flex bg-gray-100
                     p-2 rounded-xl
                     active:ring
+                    border
+                    focus:border-blue-500
                     ml-5
                     mr-2
                     '>
@@ -78,7 +80,7 @@ function Header() {
         <div className='flex min-w-fit'>
             {user ?  
                  
-                 <Image className='rounded-full animate-pulse'
+                 <Image className='rounded-full animate-pulse cursor-pointer active:animate-spin'
                  src={user.photoURL}
                  width={30}
                  height={30}
@@ -88,7 +90,7 @@ function Header() {
                 :
                 <div className='flex items-center bg-red-700       
                     rounded-full text-white p-4 h-6 ml-4
-                    font-bold'>
+                    font-bold active:animate-ping'>
                     <button type='submit' onClick={signIn}>Sign in </button>
                 </div>
             }
