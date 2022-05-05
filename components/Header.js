@@ -90,7 +90,7 @@ function Header() {
                 :
                 <div className='flex items-center bg-red-700       
                     rounded-full text-white p-4 h-6 ml-4
-                    font-bold active:animate-ping'>
+                    font-bold active:animate-ping '>
                     <button type='submit' onClick={signIn}>Sign in </button>
                 </div>
             }
