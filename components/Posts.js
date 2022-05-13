@@ -13,11 +13,13 @@ function Posts() {
         {realTimePost?.docs.map((post) => (
           <Post
             key={post.id}
+            id={post.id}
             name={post.data().name}
             message={post.data().message}
             timestamp={post.data().timestamp}
             image={post.data().image}
             postImage={post.data().postImage}
+            votes={post.data().votes}
           />
         ))}
     </div>
