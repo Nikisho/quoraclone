@@ -11,6 +11,7 @@ import HeaderIcon from './HeaderIcon';
 import { auth } from '../firebase';
 import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import { useAuthState } from 'react-firebase-hooks/auth';
+import Link from 'next/link';
 
 function Header() {
     const [user] = useAuthState(auth);
@@ -29,22 +30,29 @@ function Header() {
                     flex items-center
                     p-1
                     lg:px-5
+                    w-full
                     shadow-md'>
         {/* Left  */}
         <div className='flex 
                 items-center
                 ml-0
                 md:ml-28'>
-            <Image src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Quora_logo_2015.svg/768px-Quora_logo_2015.svg.png?20170609154433'
-                   width={88}
-                   height={25}
-                   layout='fixed'
-                   className='cursor-pointer hover:opacity-50'
-            />
+            
+                <Image src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Quora_logo_2015.svg/768px-Quora_logo_2015.svg.png?20170609154433'
+                    width={88}
+                    height={25}
+                    layout='fixed'
+                    className='cursor-pointer hover:opacity-50'
+                />
+            
             <div className='flex ml-4 
                     justify-center flex-grow
                     pl-2'> 
-                <HeaderIcon active Icon={HomeIcon} />
+                <Link href='/'>
+                    <a>
+                        <HeaderIcon  active Icon={HomeIcon} />
+                    </a>
+                </Link>
                 <HeaderIcon Icon={ClipboardListIcon} />
                 <HeaderIcon Icon={PencilAltIcon} />
                 <HeaderIcon Icon={UserGroupIcon} />
@@ -100,12 +108,10 @@ function Header() {
             <HeaderIcon Icon={GlobeAltIcon} />
         </div>
 
-        <div className='flex items-center bg-red-700
-                        
+        <div className='flex items-center bg-red-700                       
                         min-w-fit
                         rounded-full text-white p-4 h-6 ml-2
-                        font-bold'>
-                
+                        font-bold'>              
                 <button type='submit'> Add question</button>
         </div>
     </div>

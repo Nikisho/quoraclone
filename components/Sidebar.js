@@ -54,6 +54,7 @@ function Sidebar() {
       };
     })
     inputRef.current.value = '';
+    handleClose();
   };
 
   const addSpaceImage = (e) => {
@@ -71,7 +72,7 @@ function Sidebar() {
   };
 
   return (
-    <div className='fixed ml-4 md:ml-28  mt-7 pr-7 text-gray-500'>
+    <div className='ml-4 md:ml-28  mt-7 text-gray-500 min-w-fit'>
         {/* top  */}
         <div 
           onClick={handleOpen}
