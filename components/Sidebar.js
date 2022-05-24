@@ -10,7 +10,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../firebase';
 import { getDownloadURL, getStorage, ref, uploadBytesResumable, uploadString } from 'firebase/storage';
 import { useCollection } from 'react-firebase-hooks/firestore';
-
+import { useRouter } from 'next/router';
+import Link from 'next/dist/client/link';
 function Sidebar() {
   const [open, setOpen] = React.useState(false);
   const [user] = useAuthState(auth);
@@ -71,6 +72,8 @@ function Sidebar() {
     setImageToPost(null);
   };
 
+
+
   return (
     <div className='ml-4 md:ml-28  mt-7 text-gray-500 min-w-fit'>
         {/* top  */}
@@ -128,14 +131,16 @@ function Sidebar() {
 
         {/* bottom  */}
         <div className='mt-1'>
-          <Spaces title='welcome to quora'/>
-          <Spaces src="https://links.papareact.com/zof" title='sonny'/>
           {realTimeSpaces?.docs.map((space) => (
-            <Spaces
-              key={space.id}
-              src={space.data().postImage}
-              title={space.data().title}
-            />
+            <Link href={`/${space.data().title}`}>
+                <a>
+                <Spaces
+                  key={space.id}
+                  src={space.data().postImage}
+                  title={space.data().title}
+                />
+              </a>
+            </Link>
           ))}
         </div>
        

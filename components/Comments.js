@@ -4,13 +4,21 @@ import { useCollection } from 'react-firebase-hooks/firestore';
 import { db } from '../firebase';
 import { collection, orderBy, query } from 'firebase/firestore';
 
-function Comments({photo}) {
+function Comments({postId}) {
+    const postRef = collection(db, "posts", `${postId}`, "comments");
     const [realTimeComments] = useCollection(
-        query(collection(db, "comments"), orderBy('timestamp', "desc"))
+      query(postRef, orderBy('timestamp', "desc"))
     )
   return (
     <div>
-        
+        {realTimeComments?.docs.map((comment) => (
+          <Comment
+            message={comment.data().message}
+            name={comment.data().name}
+            image={comment.data().image}
+            timestamp={comment.data().timestamp}
+          />
+        ))}
     </div>
   )
 }

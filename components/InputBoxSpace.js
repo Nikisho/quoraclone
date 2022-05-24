@@ -14,24 +14,20 @@ import {
 } from "@heroicons/react/outline"
 import { useCollection } from 'react-firebase-hooks/firestore';
 
-function InputBox() {
+function InputBoxSpace({pid}) {
     const [user] = useAuthState(auth);
     const inputRef = useRef(null);
     const filePickerRef = useRef(null);
-    const sendBtn = useRef(null);
     const [imageToPost, setImageToPost] = useState(null);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const [open, setOpen] = React.useState(false);
-    const [realTimePost] = useCollection(
-        query(collection(db, "posts"))
-    );
-
+    
     const sendPost = async (e) => {
         e.preventDefault();
         if (!inputRef.current.value) return
         
-        await addDoc(collection(db, "posts"), {
+        await addDoc(collection(db, `${pid}-posts`), {
             message: inputRef.current.value,
             name: user.displayName,
             image: user.photoURL,
@@ -40,7 +36,7 @@ function InputBox() {
         .then((document) => {
             if (imageToPost) { 
                 const storage = getStorage();
-                const storageRef = ref(storage, `posts/${document.id}`);
+                const storageRef = ref(storage, `${pid}-posts/${document.id}`);
                 const uploadTask = uploadString(storageRef, imageToPost, 'data_url');
                 const uploadTaskBytes = uploadBytesResumable(storageRef, imageToPost);
                 uploadTaskBytes.on(
@@ -48,8 +44,8 @@ function InputBox() {
                     null,
                     (error) => console.error(error),
                     async () => {
-                        await getDownloadURL(ref(storage, `posts/${document.id}`)).then((url) => {
-                            setDoc(doc(db, "posts", document.id), {
+                        await getDownloadURL(ref(storage, `${pid}-posts/${document.id}`)).then((url) => {
+                            setDoc(doc(db, `${pid}-posts`, document.id), {
                                 postImage: url
                             }, { merge: true })
                         })
@@ -177,4 +173,4 @@ function InputBox() {
   )
 }
 
-export default InputBox
+export default InputBoxSpace

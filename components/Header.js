@@ -37,13 +37,17 @@ function Header() {
                 items-center
                 ml-0
                 md:ml-28'>
-            
+                <Link href='/'>
+                    <a>
                 <Image src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Quora_logo_2015.svg/768px-Quora_logo_2015.svg.png?20170609154433'
                     width={88}
                     height={25}
                     layout='fixed'
                     className='cursor-pointer hover:opacity-50'
                 />
+                    </a>
+                </Link>
+
             
             <div className='flex ml-4 
                     justify-center flex-grow

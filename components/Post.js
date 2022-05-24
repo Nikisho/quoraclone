@@ -7,13 +7,17 @@ import {
   ChevronDoubleUpIcon,
   ChevronDoubleDownIcon
 } from '@heroicons/react/outline'
-import { doc, setDoc } from 'firebase/firestore';
-import { auth, db } from '../firebase';
+import { collection, doc, query, setDoc } from 'firebase/firestore';
+import { db } from '../firebase';
 import { increment } from 'firebase/firestore';
-import { useAuthState } from 'react-firebase-hooks/auth';
+import Comments from './Comments';
+import { useCollection } from 'react-firebase-hooks/firestore';
 
 function Post({ name, message, postImage, image, timestamp, votes, id }) {
-  const [user] = useAuthState(auth);
+  //const [user] = useAuthState(auth);
+  const [realTimePost] = useCollection(
+    query(collection(db, "posts"))
+  )
   const [hide, setHide] = useState(true);
   const upvote = () => {
       setDoc(doc(db, "posts", id), {
@@ -90,9 +94,14 @@ function Post({ name, message, postImage, image, timestamp, votes, id }) {
         </div>
 
         {hide? 
-              <></> : <CommentInput photo={user.photoURL} 
-              
-        />}
+              <>
+              </> 
+              : 
+              <>
+                <CommentInput postId={id}/>
+                <Comments postId={id} />
+              </>
+        }
     </div>
   )
 }

@@ -12,7 +12,8 @@ function Feed() {
             <InputBox/>
 
             {/* Posts  */}
-            <Posts />
+            <Posts 
+            />
         </div>
     </div>
   )
