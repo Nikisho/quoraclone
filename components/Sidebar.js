@@ -116,7 +116,7 @@ function Sidebar() {
                   bg-green-500 hover:animate-pulse cursor-pointer'>
                 <p className='text-md my-2'> + add image</p>
                 <PencilAltIcon className='mt-3 ml-3 items-center h-5 '/>
-                <input ref={filePickerRef} onChange={addSpaceImage} type="file" hidden/>
+                <input ref={filePickerRef} onChange={addSpaceImage} type="file" accept="image/png, image/jpeg" hidden/>
               </div>
     
                 {imageToPost && (

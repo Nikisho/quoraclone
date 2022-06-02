@@ -159,6 +159,7 @@ function InputBox() {
                         <input  ref={filePickerRef} 
                                 onChange={addPostImage} 
                                 type="file" 
+                                accept="image/png, image/jpeg"
                                 hidden
                         />
                     </div>

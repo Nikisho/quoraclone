@@ -155,6 +155,7 @@ function InputBoxSpace({pid}) {
                         <input  ref={filePickerRef} 
                                 onChange={addPostImage} 
                                 type="file" 
+                                accept="image/png, image/jpeg"
                                 hidden
                         />
                     </div>
