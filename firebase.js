@@ -8,12 +8,7 @@ import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD68-_TpSICtWwo0pU7XAJE0zNEFPY7lWk",
-  authDomain: "quoraclone-e4797.firebaseapp.com",
-  projectId: "quoraclone-e4797",
-  storageBucket: "quoraclone-e4797.appspot.com",
-  messagingSenderId: "887125144211",
-  appId: "1:887125144211:web:462ff4cb52ba4666be5366"
+////////////////////////
 };
 
 // Initialize Firebase
