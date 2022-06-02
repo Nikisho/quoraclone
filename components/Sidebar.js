@@ -1,5 +1,6 @@
 import React, { useState, setOpen, useRef } from 'react'
 import Spaces from './Spaces';
+import Image from 'next/image';
 import { db } from '../firebase';
 import { storage } from '../firebase';
 import { Modal } from '@mui/material';
@@ -122,7 +123,14 @@ function Sidebar() {
                 {imageToPost && (
                   <div onClick={removeImage} className=' absolute right-9 mr-1 bottom-1 filter mt-2 hover:
                   brightness-110 transition duration-150 transform hover:scale-105 cursor-pointer'>
-                      <img className = 'h-16 top-1 object-contain' src={imageToPost} alt="" />
+                      {/* <img className = 'h-16 top-1 object-contain' src={imageToPost} alt="" /> */}
+                      <Image 
+                          className='top-1 object-contain'
+                          src={imageToPost}
+                          alt=""
+                          height={50}
+                          width={70}
+                        />
                       <p className='text-xs text-red-500 '>Remove</p>
                   </div>
                 )}
