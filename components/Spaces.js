@@ -21,7 +21,7 @@ function Spaces({ src, title }) {
           layout='fixed'
         />
       )}
-        <p className='inline-flex text-sm capitalize'>{title}</p>
+        <p alt='' className='inline-flex text-sm capitalize'>{title}</p>
     </div>
   )
 }

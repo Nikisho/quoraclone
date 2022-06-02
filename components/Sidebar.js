@@ -122,7 +122,7 @@ function Sidebar() {
                 {imageToPost && (
                   <div onClick={removeImage} className=' absolute right-9 mr-1 bottom-1 filter mt-2 hover:
                   brightness-110 transition duration-150 transform hover:scale-105 cursor-pointer'>
-                      <img className = ' h-16 top-1 object-contain' src={imageToPost} alt="" />
+                      <img className = 'h-16 top-1 object-contain' src={imageToPost} alt="" />
                       <p className='text-xs text-red-500 '>Remove</p>
                   </div>
                 )}
@@ -133,7 +133,7 @@ function Sidebar() {
         {/* bottom  */}
         <div className='mt-1'>
           {realTimeSpaces?.docs.map((space) => (
-            <Link href={`/${space.data().title}`}>
+            <Link key='' href={`/${space.data().title}`}>
                 <a>
                 <Spaces
                   key={space.id}

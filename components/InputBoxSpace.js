@@ -81,6 +81,7 @@ function InputBoxSpace({pid}) {
                     src={user.photoURL}
                     width={30}
                     height={30}
+                    alt=''
                     layout='fixed'
                 />
             )}

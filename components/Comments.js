@@ -13,6 +13,7 @@ function Comments({postId}) {
     <div>
         {realTimeComments?.docs.map((comment) => (
           <Comment
+            key={comment.id}
             message={comment.data().message}
             name={comment.data().name}
             image={comment.data().image}

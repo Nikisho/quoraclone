@@ -21,6 +21,7 @@ function SpaceFeed({id}) {
           src={doc.data().postImage}
           height={80}
           width={80}
+          alt=''
         />
         <p className='font-bold text-2xl capitalize'>{doc.data().title}</p>
         </>

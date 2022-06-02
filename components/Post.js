@@ -58,11 +58,11 @@ function Post({ name, message, postImage, image, timestamp, votes, id }) {
               </p>
             </div>
           </div>
-          <p className='pt-4 text-xl'>{message}</p>
+          <p className='pt-4 text-xl break-words'>{message}</p>
         </div>
         {postImage && (
             <div className='relative h-64 md:h-[420px] bg-white'>
-                <Image src={postImage} objectFit='cover'
+                <Image alt='' src={postImage} objectFit='cover'
                 layout='fill'/>
             </div>
         )}

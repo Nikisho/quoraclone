@@ -59,7 +59,7 @@ function PostSpace({ name, message, postImage, image, timestamp, votes, pid, id 
         </div>
         {postImage && (
             <div className='relative h-64 md:h-[420px] bg-white'>
-                <Image src={postImage} objectFit='cover'
+                <Image alt='' src={postImage} objectFit='cover'
                 layout='fill'/>
             </div>
         )}

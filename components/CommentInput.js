@@ -26,6 +26,7 @@ function CommentInput({postId}) {
                 className='rounded-full'
                 height={35}
                 width={35}
+                alt=''
                 src={user.photoURL}
             />
             <form  className='flex flex-1'>

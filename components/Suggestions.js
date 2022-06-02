@@ -11,6 +11,7 @@ function Suggestions({ src, title }) {
             src={src}
             width={25}
             height={25}
+            alt=''
             layout="fixed"
         />
       ) :

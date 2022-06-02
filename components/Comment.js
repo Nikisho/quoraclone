@@ -13,6 +13,7 @@ function Comment({image, message, name, timestamp}) {
             height={30}
             width={30}
             src={image}
+            alt=''
           />
         }
 

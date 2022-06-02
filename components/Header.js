@@ -43,6 +43,7 @@ function Header() {
                     width={88}
                     height={25}
                     layout='fixed'
+                    alt=''
                     className='cursor-pointer hover:opacity-50'
                 />
                     </a>
