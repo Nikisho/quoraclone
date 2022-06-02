@@ -3,6 +3,7 @@ import { useCollection } from 'react-firebase-hooks/firestore';
 import { db } from '../firebase';
 import { collection, orderBy, query } from 'firebase/firestore';
 import Post from './Post';
+import PostSpace from './PostSpace';
 
 function PostsSpace({id}) {
   const [realTimePost, loading, error] = useCollection(
@@ -11,9 +12,10 @@ function PostsSpace({id}) {
   return (
     <div className='priority'>
         {realTimePost?.docs.map((post) => (
-          <Post
+          <PostSpace
             key={post.id}
             id={post.id}
+            pid={id}
             name={post.data().name}
             message={post.data().message}
             timestamp={post.data().timestamp}

@@ -1,6 +1,7 @@
 import React from 'react';
-import Spaces from './Spaces';
 import Suggestions from './Suggestions';
+import Link from 'next/dist/client/link';
+
 function Navbar() {
   return (
     <div className='pr-4 p-3 pt-8 bg-gray-100'>
@@ -8,10 +9,23 @@ function Navbar() {
           <p>Spaces to follow</p>
         </div>
         <div>
-          <Suggestions title='welcome to quora'/>
-          <Suggestions src="https://links.papareact.com/zof" title='sonny'/>
-          <Suggestions title='space1'/>
-          <Suggestions title='plants'/>
+          <Link href='/welcome to quora'>
+            <a>
+              <Suggestions title='welcome to quora'/>
+            </a>
+          </Link>
+          <Link href='/Lifestyle and Welbeing'>
+            <a>
+              <Suggestions title='Lifestyle and Welbeing'/>
+            </a>
+          </Link>
+          <Link href='/Felling lucky?'>
+            <a>
+            <Suggestions title='Felling lucky?'/>
+            </a>
+          </Link>
+          
+          
         </div>
     </div>
   )

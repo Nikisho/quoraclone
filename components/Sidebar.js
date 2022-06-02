@@ -12,6 +12,7 @@ import { getDownloadURL, getStorage, ref, uploadBytesResumable, uploadString } f
 import { useCollection } from 'react-firebase-hooks/firestore';
 import { useRouter } from 'next/router';
 import Link from 'next/dist/client/link';
+
 function Sidebar() {
   const [open, setOpen] = React.useState(false);
   const [user] = useAuthState(auth);
@@ -80,7 +81,7 @@ function Sidebar() {
         <div 
           onClick={handleOpen}
           className='flex items-center p-2 rounded-md bg-gray-200 pr-7
-          cursor-pointer hover:bg-gray-300 '>
+          cursor-pointer hover:bg-gray-300'>
           <p> + Create Space </p>
         </div>
 
