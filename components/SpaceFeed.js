@@ -2,7 +2,7 @@ import { collection, collectionGroup, query, where } from 'firebase/firestore';
 import React from 'react'
 import { useCollection } from 'react-firebase-hooks/firestore';
 import InputBoxSpace from './InputBoxSpace'
-import PostsSpace from './postsSpace';
+import PostsSpace from './PostsSpace';
 import Image from 'next/image';
 import { db } from '../firebase';
 function SpaceFeed({id}) {
