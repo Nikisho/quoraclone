@@ -77,7 +77,7 @@ function Sidebar() {
 
 
   return (
-    <div className='ml-4 md:ml-28  mt-7 text-gray-500 min-w-fit'>
+    <div className='hidden md:block ml-4 md:ml-28  mt-7 text-gray-500 min-w-fit'>
         {/* top  */}
         <div 
           onClick={handleOpen}

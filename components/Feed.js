@@ -4,7 +4,7 @@ import Posts from './Posts';
 
 function Feed() {
   return (
-    <div className=' w-[45%]
+    <div className=' lg:w-[45%]
     min-w-fit 
     h-screen pb-44 pl-3 pt-6 
     overflow-y-auto scrollbar-hide'>

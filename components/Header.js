@@ -25,9 +25,10 @@ function Header() {
     }
   return (
     <div className='sticky top-0 
+                    hidden
                     z-50
                     bg-white
-                    flex items-center
+                    lg:flex items-center
                     p-1
                     lg:px-5
                     w-full

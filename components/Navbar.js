@@ -4,7 +4,7 @@ import Link from 'next/dist/client/link';
 
 function Navbar() {
   return (
-    <div className='pr-4 p-3 pt-8 bg-gray-100'>
+    <div className='hidden md:block pr-4 p-3 pt-8 bg-gray-100'>
         <div className='bg-white border-b p-3 text-md font-semibold'>
           <p>Spaces to follow</p>
         </div>
